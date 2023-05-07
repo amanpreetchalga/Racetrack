@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,6 +20,15 @@ import java.util.ResourceBundle;
  */
 public class UserInterfaceController implements Initializable {
 
+    public Pane FormPane;
+    public TextField namePlayer1;
+    public ToggleButton AIPlayer1;
+    public TextField namePlayer2;
+    public ToggleButton AIPlayer2;
+    public TextField namePlayer3;
+    public ToggleButton AIPlayer3;
+    public TextField namePlayer4;
+    public ToggleButton AIPlayer4;
     /**
      * Label that displays the welcome text. Should be deleted when creating an
      * actual project.
@@ -50,11 +60,13 @@ public class UserInterfaceController implements Initializable {
 
 
     public void startButtonAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ApplicationMain.class.getResource("UserInterface.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ApplicationMain.class.getResource("Racetrack.fxml"));
         Stage stage = new Stage();
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 800, 400);
         stage.setTitle("Race Track");
         stage.setScene(scene);
+        stage.setMinWidth(400);
+        stage.setMinHeight(400);
         stage.show();
     }
 }
